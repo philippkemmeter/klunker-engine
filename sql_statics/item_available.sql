@@ -1,0 +1,55 @@
+-- MySQL dump 10.11
+--
+-- Host: localhost    Database: payment
+-- ------------------------------------------------------
+-- Server version	5.0.76-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `item_available`
+--
+
+DROP TABLE IF EXISTS `item_available`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `item_available` (
+  `type` tinyint(3) unsigned NOT NULL default '0',
+  `id` smallint(5) unsigned NOT NULL default '0',
+  `start_tstamp` int(10) unsigned NOT NULL default '0',
+  `lasts_until_tstamp` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`type`,`id`,`start_tstamp`),
+  KEY `lasts_until_tstamp` (`lasts_until_tstamp`),
+  KEY `start_tstamp` (`start_tstamp`)
+) ENGINE=InnoDb DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `item_available`
+--
+
+LOCK TABLES `item_available` WRITE;
+/*!40000 ALTER TABLE `item_available` DISABLE KEYS */;
+INSERT INTO `item_available` VALUES (1,105,1277700000,1277960453),(10,2601,1287972000,1288620000),(10,2701,1287972000,1288620000),(10,2801,1287972000,1288620000),(10,3301,1291356000,1291658400),(10,3401,1291528800,1291831200),(10,2901,1291701600,1292004000),(10,3101,1291960800,1292263200),(10,3501,1292133600,1292436000),(10,3001,1290924000,1293429599),(10,3201,1291615200,1293429599),(10,3601,1291096800,1293429599),(1,1,0,4294967295),(10,601,0,4294967295);
+/*!40000 ALTER TABLE `item_available` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2010-11-26 20:32:23
